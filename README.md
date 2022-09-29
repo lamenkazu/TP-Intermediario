@@ -1,83 +1,40 @@
-# Trabalho Prático 01: Restaurante
+# Trabalho Prático 01
 
 *Valor: 15 pontos*
 
-*Trabalho individual*
+*Trabalho em dupla*
 
-## Descrição
+## Sistema de Reservas
 
-O dono de um restaurante entrou em contato com sua equipe no intuito de informatizar a gestão de suas comandas. Para isto, ele entrou em contato com o gerente de produto de sua equipe, que levantou as seguintes histórias de usuário:
+A diretoria do Colégio Técnico deseja informatizar o processo de reserva de salas de aula disponíveis no colégio. 
+Esse sistema deverá exibir a lista de salas de aula disponíveis para reserva, além de permitir que professores e responsáveis possam requerer a reserva da sala para um determinado dia/horário. 
+Para que isso seja possível, é necessário que cada sala seja representada pelos seguintes dados: número da sala, capacidade, e a lista de reservas realizadas.
+Ainda, existem dois tipos de sala de aula: convencional, e laboratório. 
+Em relação a reserva, cada uma deverá informar o nome do professor responsável, o setor ao qual esse professor pertence, e a data/hora da reserva realizada.
 
-**Garçon**
 
-* Como garçon, desejo poder abrir uma nova mesa
-* Como garçon, desejo poder fechar uma determinada mesa
-* Como garçon, desejo poder fazer novos pedidos para uma mesa
+## Prova de Conceito
 
-**Gerente**
-* Como gerente, desejo poder abrir uma nova mesa
-* Como gerente, desejo poder fechar uma determinada mesa
-* Como gerente, desejo poder visualizar pedidos de uma mesa
+Nesta primeira etapa do trabalho, foi requerido a sua equipe a implementação de uma prova de conceito do sistema.
+Nesta prova de conceito não será necessário, por enquanto, o uso de mecanismos de armazenamento externo (arquivos e/ou banco de dados).
+Isso significa que os dados do sistema (salas, reservas, etc) deverão ser fornecidos toda vez que o sistema for executado.
+Ainda neste primeiro momento, cada sala está restrita a receber até 20 reservas.
 
-Ao mostrar essas histórias para o arquiteto de software da sua equipe, ele determinou que deveriam ser criadas as seguintes classes:
+Em relação as funcionalidades, a sua equipe conversou com a direção do colégio, e chegou às seguintes histórias de usuário:
 
-* `Mesa`: representa uma mesa do restaurante
-* `Funcionario`: representa um funcionário qualquer do restaurante
-* `Garcon`: representa um garçon
-* `Gerente`: representa um gerente
-* `Pedido`: representa um pedido realizado
-* `Restaurante`: Classe principal do programa.
+- Como usuário, gostaria de visualizar as salas disponíveis para reserva
+- Como usuário, gostaria de visualizar as reservas realizadas em uma sala
+- Como professor, gostaria de reservar uma sala
 
-## Detalhes
+Por fim, a interface dessa prova de conceito deverá ser implementada por meio diálogos (`JOptionPane`).
 
-Para cada classe, o arquiteto ainda determinou que os seguintes atributos e métodos estejam presentes e implementados:
+### Avaliação
 
-### Classe `Pedido.java`
+Para a primeira etapa, o trabalho deverá ser apresentado para o professor no dia 20/10/2022 (duração de 10 minutos).
+A avaliação levará em consideração os seguintes critérios:
 
-**Atributos**
-* Descrição do pedido
-* Valor do pedido
-* TOTAL DE PEDIDOS: Número total de pedidos realizados no geral
-
-### Classe `Mesa.java`
-
-**Atributos**
-* Número da mesa
-* Número de clientes
-* Histórico de pedidos (no máximo 100)
-* Funcionário responsável pela mesa
-* TOTAL DE MESAS: Número total de mesas abertas no geral
-
-### Classe `Funcionario.java`
-
-* Um funcionário *nunca* deverá ser inicializado diretamente.
-
-**Atributos**
-* Nome do funcionário
-* Código do funcionário
-
-**Métodos**
-* `Mesa abrirMesa(int numClientes)`: método responsável por abrir uma nova mesa. A mesa a ser aberta torna o funcionário responsável por ela.
-* `void fecharMesa(Mesa mesa)`: método responsável por fechar uma determinada mesa (apaga-se seu histórico e número de clientes)
-
-### Classe `Garcon.java`
-
-* Essa classe deve herdar as características de Funcionário.
-
-**Métodos**
-* `void fazerPedido(Mesa mesa, Pedido pedido)`: realize um determinado pedido para uma determinada mesa.
-
-### Classe `Gerente.java`
-
-* Essa classe deve herdar as características de Funcionário.
-
-**Métodos**
-
-* `void visualizarPedidos(Mesa mesa)`: lista os pedidos realizados em uma determinada mesa, junto do total da conta da mesa até o momento.
-
-## Observações
-
-Você deverá seguir as seguintes observações para todas as classes que serão implementadas no programa:
-
-* Todos os atributos deverão ser privados. Crie getters e setters para acessá-los.
-* Você deverá implementar testes para todos os métodos implementados. Utilize a classe `Restaurante` para isso.
+- Modelagem das classes, métodos e atributos para representar os dados do sistema
+- Implementação e uso adequado dos recursos de encapsulamento oferecidos pela linguagem Java
+- Uso adequado dos recursos de herança e polimorfismo
+- Implementação das funcionalidades requeridas no trabalho
+- Utilização dos recursos de interface gráfica (`JOptionPane`)
